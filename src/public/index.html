@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="icon" type="imagem/png" href="./utils/ft-figure.png" />
+    <title>Agendamentos Vitor Soluções</title>
+</head>
+
+<body>
+    
+    <div class="main-container">
+        <div id="warning" class="warning off">
+            Preencha todos os campos obrigatorios
+        </div>
+        <div id="warning-cpf" class="warning off">
+            CPF ou CNPJ precisa ser válido!
+        </div>
+        <div id="warning-tel" class="warning off">
+            Numero de telefone precisa ser válido! ou estar vazio
+        </div>
+           <div id="warning-cep" class="warning off">
+            Cep precisa ser válido!
+        </div>
+                <div class="grid-title">
+                    <img src="https://vitorrefrigeracao.com.br/site/layout/img/logoVitor1.png" alt="">
+                </div>
+        <div class="main-grid">
+            <div class="grid-box left">
+                <img class="left-img" src="//vitorrefrigeracao.com.br/assets/images/sections/logo.png" alt="">
+            </div>
+            <div class="grid-box right show" id="show-1">
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h2 class="grid-sub-title">
+                        Agendar Novo Atendimento
+                    </h2>
+                    <span>
+                        Etapa 1 de 5 
+                    </span>
+                </div>
+                <section class="input-container">
+                    <span id="y"></span>
+                    <label for="">* Equipamento</label>
+                    <input class="d-input" id="equipamento" list="equipamento-datalist" placeholder="Selecione">
+                        <datalist id="equipamento-datalist" name="Equipamento" type="text">
+                        </datalist>  
+                </section>
+                <section class="input-container">
+                    <label for="">* Marca</label>
+                    <input class="d-input" id="marca" list="marca-datalist" aria-hidden="true" placeholder="Selecione">
+                    <datalist id="marca-datalist" name="Marca" type="text">
+                    </datalist> 
+                </section>
+                <section class="input-container">
+                    <label for="">* Capacidade</label>
+                    <input id="capacidade" type="number" placeholder="Capacidade" min="1">
+                    <select name="" id="capacidade-tipo">
+                        <option value="">Selecione o equipamento</option>
+                    </select>
+                </section>
+                <section class="input-container-no-border">
+                    <label for="">* Defeito</label>
+                    <input id="defeito" type="text" placeholder="Especifique o defeito">
+                </section>
+                <section class="input-container-no-border">
+                    <label for="" aria-placeholder="Opcional...">Observação</label>
+                    <textarea id="ob2" class="first-text-area" name="text-area"></textarea>
+                </section>
+                <section class="input-container-no-border">
+                    <button id="action-btn-2" class="action-btns">Continuar</button>
+                </section>
+            </div>
+            <div class="grid-box right not-show" id="show-2">
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h2 class="grid-sub-title">
+                        Agendar Novo Atendimento
+                    </h2>
+                    <span>
+                        Etapa 2 de 5
+                    </span>
+                </div>
+                <div class="show-data-container">
+                    <section class="mes-container">
+                        <span id="back-month-button">
+                            &lt;
+                        </span>
+                        <h3 id="mes">Mes</h3>
+                        <span id="next-month-button">
+                            &gt;
+                        </span>
+                    </section>
+                    <div class="data-container">
+                        <div id="warning-data" style="display: none;">
+                            <span class="sem-vagas">Sem dias restantes disponiveis para esse mes</span><br/>
+		                    <span class="sem-vagas">Passe para o proximo</span>
+                        </div>
+                        <div class="data-grid-container" id="data-grid-container-id">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="show-inputs-container">
+                    <section class="input-container">
+                        <label for="">* Tipo de atendimento</label>
+                        <select id="tipo" type="" placeholder="TIPO ATENDIMENTO">
+                            <option value="">
+                                Selecione
+                            </option>
+                            <option value="fora_garantia">
+                                Fora de garantia
+                            </option>
+                            <option value="garantia_conserto">
+                                Garantia de conserto
+                            <option value="garantia_fabrica">
+                                Garantia de fabrica
+                            </option>
+                        </select>
+                    </section>
+                    <div id="data-input-container" style="display: flex; flex-direction: column; gap: 10px;">
+                        <section class="input-container" onmouseover="Tip('Selecione o tipo de atendimento antes')" onmouseout="UnTip()">
+                            <label for="">* Data</label>
+                            <input id="date" type="date" placeholder="DATA" disabled>
+                        </section>
+                            <section class="input-container" onmouseover="Tip('Selecione a data de atendimento antes')" onmouseout="UnTip()">
+                            <label for="">* Turno</label>
+                            <select id="turno" type="checkbox" placeholder="TURNO" disabled>
+                                <option value="">
+                                    Selecione
+                                </option>
+                            </select>
+                            </section>
+                    </div>
+                    <section class="input-container">
+                        <label for="">* Telefone</label>
+                        <input id="telefone" type="tel" placeholder="(xx) xxxxx-xxxx" cl>
+                    </section>
+                    <section class="input-container-no-border">
+                        <label for="" aria-placeholder="Opcional...">Observação</label>
+                        <textarea id="ob1" class="first-text-area" name="text-area"></textarea>
+                    </section>
+                    <section class="input-container-no-border">
+                        <button id="action-btn-1" class="action-btns">Continuar</button>
+                    </section>
+                </div>
+            </div>
+            <div class="grid-box right not-show" id="show-3">
+                <!-- <div class="grid-title">
+                    <h3>Cadastre sua Visita</h3>
+                </div> -->
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h2 class="grid-sub-title" id="sub-title-client">
+                        Dados Cliente
+                    </h2>
+                    <span>
+                        Etapa 3 de 5
+                    </span>
+                </div>
+                <section class="input-container">
+                    <label for="">* Nome</label>
+                    <input id="nome" type="text" placeholder="Nome do cliente">
+                </section>
+                <section class="input-container">
+                    <label for="">* CPF / CNPJ</label>
+                    <input id="cpf" type="text" placeholder="Cpf ou  CNPJ do cliente">
+                </section>
+                <section class="input-container">
+                    <label for=""><span style="color: transparent;">*</span> Cep </label>
+                    <input id="cep" type="text" placeholder="Cep">
+                </section>
+                <section class="input-container">
+                    <label for="">* Cidade</label>
+                    <input id="cidade" type="text" placeholder="Cidade">
+                </section>
+                <section class="input-container">
+                    <label for="">* Bairro</label>
+                    <input id="bairro" type="text" placeholder="Bairro">
+                </section>
+                <section class="input-container">
+                    <label for="">* Rua</label>
+                    <input id="rua" type="text" placeholder="Rua">
+                </section>
+                <section class="input-container">
+                    <label for="">* Numero</label>
+                    <input id="numero" type="number" placeholder="Numero" min="1"> <!-- numero -->
+                </section>
+                <section class="input-container">
+                    <label for="">* Referencia</label>
+                    <input id="referencia" type="text" placeholder="Ponto de  referencia">
+                </section>
+                <section class="input-container">
+                    <label for="">* Complemento</label>
+                    <input id="complemento" type="text" placeholder="Complemento">
+                    <!-- <span style="color: transparent;">*</span> -->
+                </section>
+                <section class="input-container-no-border">
+                    <button id="action-btn-3" class="action-btns">Finalizar</button>
+                </section>
+            </div>
+            <div class="grid-box right not-show" id="show-4" >
+                <!-- <div class="grid-title">
+                    <h3>Cadastre sua Visita</h3>
+                </div> -->
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h2 class="grid-sub-title">
+                        Confirmação
+                    </h2>
+                    <span>
+                        Etapa 4 de 5
+                    </span>
+                </div>
+                <section class="input-container-no-border flex-container">
+                    <span style="font-weight: bold;">
+                        Vou lhe explicar nossa forma de trabalho:
+                    </span>
+                    <span>
+                        Vamos até o local e  fazemos uma avaliação de seu equipamento.
+                        <strong>A taxa de avaliação e mão de obra é de R$ 160,00</strong>
+                        Sendo feito qualquer tipo de serviço, esse valor fica como o valor da mão de obra.
+                        <strong> Se houver alguma peça a ser trocada, passamos o valor da peça a parte.
+                        Será cobrada uma taxa adicional de R$ 35,00, </strong>referente ao custo de nosso deslocamento até o local do serviço (essa taxa é cobrada somente uma vez, independente do numero de visitas necessárias)
+                    </span>
+                    <span style="font-weight: bold;">
+                        Esse valor deverá ser pago no ato do atendimento ao prestador.
+                    </span>
+                    <section class="flex-container-1">
+                        <span  style="font-weight: bold;">
+                            Meios de pagamento: 
+                        </span>
+                        <span>
+                            Cartão de credito
+                        </span>
+                        <span>
+                            Pix
+                        </span>
+                        <span>
+                            Dinheiro 
+                        </span>
+                    </section>
+                </section>
+                <section class="input-container-no-border">
+                    <button id="action-btn-4" class="action-btns">Finalizar</button>
+                </section>
+            </div>
+            <div class="grid-box right not-show" id="show-5" >
+                <!-- <div class="grid-title">
+                    <h3>Cadastre sua Visita</h3>
+                </div> -->
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h2 class="grid-sub-title" style="text-align: left;">
+                        Informações Finais
+                    </h2>
+                    <span>
+                        Etapa 5 de 5 - concluido
+                    </span>
+                </div>
+                <section class="input-container-no-border flex-container" id="final-info">
+                    <span style="font-weight: bold;">
+                       Agendamento finalizado, sua visita foi agendada com sucesso!
+                    </span>
+                    <span style="font-weight: bold;">
+                        Informações Sobre seu Agendamento:
+                    </span>
+                    </section>
+                </section>
+                <!--<section class="input-container-no-border">
+                    <button id="action-btn-4" class="action-btns">Entendi</button>
+                </section>-->
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<!-- <script> y
+    const date = document.getElementById("date")
+
+    function FormataStringData(data) {
+        var dia = data.split("/")[0];
+        var mes = data.split("/")[1];
+        var ano = data.split("/")[2];
+
+        return ano + '-' + ("0" + mes).slice(-2) + '-' + ("0" + dia).slice(-2);
+        // Utilizo o .slice(-2) para garantir o formato com 2 digitos.
+    }
+    date.setAttribute("min", FormataStringData(new Date().toLocaleDateString()))
+</script> -->
+
+<script type="text/javascript" src="./js/wz_tooltip.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="./js/index.js" type="module"></script>
+
+</html>

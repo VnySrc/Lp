@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+        <link rel="stylesheet" href="../css/checklistConsulta.css" />
+    <link rel="stylesheet" href="../css/checklist.css" />
+
+    <link rel="stylesheet" href="../css/animations.css" />
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <i class="bx bx-menu menu-icon"></i>
+        <span class="logo-name">Vitor Dashboard</span>
+      </div>
+      <div class="sidebar">
+        <div class="logo">
+          <i class="bx bx-menu menu-icon"></i>
+          <span class="logo-name">Dashboard</span>
+        </div>
+
+        <div class="sidebar-content">
+          <ul class="lists">
+            <li class="list">
+              <a href="/checklist" class="nav-link">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="link">Dashboard</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="/checklist/consulta" class="nav-link">
+                <i class="bx bx-bar-chart-alt-2 icon"></i>
+                <span class="link">Consulta</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-bell icon"></i>
+                <span class="link">Em breve...</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="bottom-cotent">
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-cog icon"></i>
+                <span class="link">Settings</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-log-out icon"></i>
+                <span class="link">Logout</span>
+              </a>
+            </li>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Informações</h2>
+        <div class="infos-container" id="infos-container-id">
+           
+        </div>
+  </div>
+</div>
+    <div class="main-container" style="margin-top:50px;">
+      <div class="title-container">
+        <h3>Instalações Consulta</h3>
+    </div>
+    <div class="dados-container">
+        <div>
+            <h3>Filtros</h3>
+        </div>
+        <div class="filters-container">
+            <!-- <section>
+                <input type="text" min="1" name="data_agendamento" id="data" placeholder="Pesquisar pela data...">
+            </section> -->
+            <section>
+                <input type="text" min="1" name="numero_serviço" id="data" placeholder="Pesquisar pelo Nº Ordem...">
+            </section>
+            <section>
+                <input type="text" min="1" name="numero_tecnico" id="data" placeholder="Pesquisar pelo Nº Tecnico...">
+            </section>
+            <section>
+                <select name="tempo" id="tempo">
+                <option value="recente">
+                    Mais recente
+                </option>
+                <option value="antigo">
+                    Mais antigo
+                </option>
+                </select>
+            </section>
+            <section>
+                <button id="search-btn">Pesquisar</button>
+             </section>
+            <section>
+               <button style="background-color: red;" id="clean-btn">Limpar</button>
+            </section>
+            <!-- <section>
+                <datalist>
+                    <option value="">
+                        Equipamento
+                    </option>
+                </datalist>
+            </section>
+            <section>
+                <input list="marca-datalist" type="text" name="" id="" placeholder="Marca...">
+                <datalist id="marca-datalist">
+                    <option value="">
+                        Marca
+                    </option>
+                </datalist>
+            </section> -->
+        </div>
+        <div class="data-table-container" style="height: 300px;">
+            <div class="title-description">
+              <h3 id="title-description-id">Descrição Da Pesquisa</h3>  
+            </div>
+            <div>
+                <table style="width:100%;" class="results-container" id="results-container-id">
+                    <tr style="background-color: black; color:white; height: 35px">
+                    <th style="width: 20%">Numero Ordem</th>
+                    <th style="width: 20%">Data Visita</th>
+                    <th style="width: 20%">Tecnico Nome</th>
+                    <th style="width: 20%">Baixar PDF</th>
+                    </tr>
+                      <!-- #D1D5DB -->
+                </table>
+            </div>
+            <div class="pagination-contianer">
+                <span class="pagination-item" id="back">&laquo;</span>
+                <span id="position" style="font-size: 20px;">1</span>
+                <span class="pagination-item" id="next">&raquo;</span>
+            </div>
+            <span>De</span>
+            <span id="total">100</span>
+        </div>
+    </div>
+    </div>
+    <section class="overlay"></section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module" src="../js/checklistConsulta.js"></script>
+    <script>
+      const navBar = document.querySelector("nav"),
+        menuBtns = document.querySelectorAll(".menu-icon"),
+        overlay = document.querySelector(".overlay");
+
+      menuBtns.forEach((menuBtn) => {
+        menuBtn.addEventListener("click", () => {
+          navBar.classList.toggle("open");
+        });
+      });
+
+      overlay.addEventListener("click", () => {
+        navBar.classList.remove("open");
+      });
+    </script>
+  </body>
+</html>
+

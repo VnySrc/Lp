@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos consulta</title>
+    <link rel="stylesheet" href="../css/consulta.css">
+</head>
+<body>
+    <script> 
+        let password = prompt("Senha", "s")
+        if (password !== "111") {
+            alert("Acesso Negado!")
+            window.location.reload()
+        }
+    </script>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Informações</h2>
+       <div class="infos-container" id="infos-container-id">          
+       </div>
+  </div>
+</div>
+
+    <div class="main-container">
+        <div class="title-container">
+            <h3>Agendamentos Consulta</h3>
+        </div>
+        <div class="dados-container">
+            <div>
+                <h3>Filtros</h3>
+            </div>
+            <div class="filters-container">
+                <!-- <section>
+                    <input type="text" min="1" name="data_agendamento" id="data" placeholder="Pesquisar pela data...">
+                </section> -->
+                <section>
+                    <input type="text" min="1" name="nome" id="data" placeholder="Pesquisar pelo nome...">
+                </section>
+                <section>
+                    <input type="number" min="1" name="telefone" id="data" placeholder="Pesquisar pela telefone...">
+                </section>
+                <section>
+                    <select name="tempo" id="tempo">
+                    <option value="recente">
+                        Mais recente
+                    </option>
+                    <option value="antigo">
+                        Mais antigo
+                    </option>
+                    </select>
+                </section>
+                <section>
+                    <select name="tipo_atendimento" id="tipo">
+                        <option value="">
+                            Tipo garantia
+                        </option>
+                        <option value="fora_garantia">
+                            Fora de garantia
+                        </option>
+                        <option value="garantia_conserto">
+                            Garantia de conserto
+                        </option>
+                        <option value="garantia_fabrica">
+                            Garantia de fabrica
+                        </option>
+                    </select>
+                </section>
+                <section>
+                    <button id="yyy">Pesquisar</button>
+                 </section>
+                <section>
+                   <button style="background-color: red;" id="clean-btn">Limpar</button>
+                </section>
+                <!-- <section>
+                    <datalist>
+                        <option value="">
+                            Equipamento
+                        </option>
+                    </datalist>
+                </section>
+                <section>
+                    <input list="marca-datalist" type="text" name="" id="" placeholder="Marca...">
+                    <datalist id="marca-datalist">
+                        <option value="">
+                            Marca
+                        </option>
+                    </datalist>
+                </section> -->
+            </div>
+            <div class="data-table-container">
+                <div class="title-description">
+                  <h3 id="title-description-id">Descrição da pesquisa</h3>  
+                </div>
+                <div>
+                    <table style="width:100%;" class="results-container" id="results-container-id" itemid="table-resp">
+                        <tr style="background-color: black; color:white; height: 35px">
+                        <th style="width: 20%"> Criado Data</th>
+                        <th style="width: 20%">Nome</th>
+                        <th style="width: 20%">Equipamento</th>
+                        <th style="width: 10%">Detalhes</th>
+                        </tr>
+                          <!-- #D1D5DB -->
+                    </table>
+                </div>
+                <div class="pagination-contianer">
+                    <span class="pagination-item" id="back">&laquo;</span>
+                    <span id="position" style="font-size: 20px;">1</span>
+                    <span class="pagination-item" id="next">&raquo;</span>
+                </div>
+                <span>De</span>
+                <span id="total">100</span>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./js/consulta.mjs">
+        
+    </script>
+</body>
+</html>

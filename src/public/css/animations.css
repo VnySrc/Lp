@@ -1,0 +1,36 @@
+
+.not-show {
+    transition: 0.2s;
+    transform: translate3d(50, 0, 0);
+    opacity: 0;
+    display: none;
+}
+
+.show {
+    opacity: 1;
+    animation-name: show;
+    animation-duration: 0.2s;
+}
+
+.on {
+    opacity: 1;
+    animation-name: on;
+    animation-duration: 3.5s;
+}
+
+.off {
+    opacity: 0;
+}
+
+@keyframes show {
+    from{transform: translate(90%, 0%);}
+    to{transform: translate(0%, 0%);}
+  }
+
+  @keyframes on {
+    0%{display: flex; opacity: 1;}
+    25%{display: flex; opacity: 1;}
+    50%{display: flex; opacity: 1;}
+    75%{display: flex; opacity: 1;}
+    100%{display: none; opacity: 0;}
+  }

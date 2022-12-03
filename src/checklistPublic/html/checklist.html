@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/checklist.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <i class="bx bx-menu menu-icon"></i>
+        <span class="logo-name">Vitor Dashboard</span>
+      </div>
+      <div class="sidebar">
+        <div class="logo">
+          <i class="bx bx-menu menu-icon"></i>
+          <span class="logo-name">Dashboard</span>
+        </div>
+
+        <div class="sidebar-content">
+          <ul class="lists">
+            <li class="list">
+              <a href="/checklist" class="nav-link">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="link">Dashboard</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="/checklist/consulta" class="nav-link">
+                <i class="bx bx-bar-chart-alt-2 icon"></i>
+                <span class="link">Consulta</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="/" class="nav-link">
+                <i class="bx bx-bell icon"></i>
+                <span class="link">Em breve...</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="bottom-cotent">
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-cog icon"></i>
+                <span class="link">Settings</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-log-out icon"></i>
+                <span class="link">Logout</span>
+              </a>
+            </li>
+          </div>
+        </div>
+      </div>
+    </nav>
+  <div id="pdf-container">
+    <div class="main-container">
+      <div class="flex-container">
+        <h3 class="main-title"> Levantamento Instalação </h3>
+        <div class="inputs-container">
+           <!--<h3 class="sub-title-1">Dados Instalação</h3>-->
+          <div class="inputs-sub-container"> <!-- Input sub container start -->
+            <section class="input-section">
+              <label for="">Data</label>
+              <input type="datetime-local" name="" id="data-visita" placeholder="Data da visita">
+            </section>
+            <section class="input-section">
+              <label for="">Numero ordem</label>
+              <input type="number" name="" id="numero-serviço" placeholder="Numero ordem">
+            </section>
+            <section class="input-section">
+              <label for="">Numero tecnico</label>
+              <input type="number" name="" id="numero-tecnico" placeholder="Numero do tecnico">
+            </section>
+            <section class="input-section">
+              <label for="">Nome</label>
+              <input type="text" name="" id="nome-tecnico" placeholder="Nome">
+            </section>
+            <section class="input-section">
+              <label for="">Quantidade AR</label>
+              <input type="number" name="" id="quantidade-ar" placeholder="Quantidade ar">
+            </section>
+          </div> <!-- Input sub container end -->
+        </div>
+        <h3 class="sub-title">* Dados aparelhos *</h3>
+
+      <div id="aparelhos-container">
+        <h3 class="inputs-sub-container-title">Dados AR 1</h3>
+        <div class="inputs-sub-container ar-container-identfier" id="ar-container"> <!-- Input sub container start -->
+          <section class="input-section">
+            <label for="">Marca</label>
+            <input type="text" list="brand-datalist" id="marca" placeholder="Marca equipamento">
+            <datalist id="brand-datalist" class="brand-datalist">
+            </datalist>
+          </section>
+          <section class="input-section">
+            <label for="">Btus</label>
+            <input type="number" name="" id="btus" placeholder="Btus equipamento">
+          </section>
+          <section class="input-section">
+            <label for="">Compressor</label>
+            <select id="compressor">  
+              <option value="">Selecione</option>
+              <option value="inverter">Inverter</option>
+              <option value="convencional">Convencional</option>
+            </select>
+          </section>
+          </section>
+          <section class="input-section">
+            <label for="">Condensador</label>
+            <select id="condensador">  
+              <option value="">Selecione</option>
+              <option value="horizontal">Horizontal</option>
+              <option value="vertical">Vertical</option>
+            </select>
+          </section>
+        </div> <!-- Input sub container end -->
+      </div>
+
+      <h3 class="sub-title-1">* Dados Instalação * </h3>
+      <h3 class="inputs-sub-container-title" style="font-size: 22px; margin-top: -10px;">Tem pre instalção: </h3>
+      <div class="checkbox-sub-container"> <!-- Input sub container start -->
+        <section class="checkbox-section">
+          <label for="">Tubulação cobre</label>
+          <input class="action-cehckbox" data-container="tubulação" type="checkbox" name="">
+        </section>
+        <section class="checkbox-section">
+          <label for="">Dreno externo</label>
+          <input class="action-cehckbox" data-container="dreno" type="checkbox" name="" >
+        </section>
+        <section class="checkbox-section">
+          <label for="" id="up">Canaletas</label>
+          <input class="action-cehckbox" data-container="canaletas" type="checkbox" name="" >
+        </section>
+        <section class="checkbox-section">
+          <label for="">Ponto de força</label>
+          <input class="action-cehckbox" data-container="ponto_força" type="checkbox" name="">
+        </section>
+      </div>
+
+      <div class="grid-container">
+
+        <div class="grid-sub-conatiner" id="tubulação-container">
+          <h3 class="grid-title">Tubulação cobre</h3>
+          <section class="grid-section">
+            <label for="">Quantos metros de tubulação precisa?</label>
+            <input type="number" name="" id="tubulação-metros" placeholder="Metros">
+          </section>
+        </div>
+
+        <div class="grid-sub-conatiner" style="display:none;" id="dreno-container">
+          
+        </div>
+
+        <div class="grid-sub-conatiner" id="canaletas-container" style="display:none;">
+       
+        </div>
+
+        <div class="grid-sub-conatiner" id="ponto_força-container" style="display:none;">
+          
+        </div>
+      </div>
+
+      <h3 class="sub-title">* Altura *</h3>
+      <h3 class="inputs-sub-container-title" style="font-size: 22px;">Precisa de alguma das opções abaixo ?</h3>
+      <div class="checkbox-sub-container"> <!-- Input sub container start -->
+        <section class="checkbox-section">
+          <label for="">Escada Aluminio</label>
+          <input type="checkbox" name="" id="escada-aluminio" placeholder="Marca equipamento">
+        </section>
+        <section class="checkbox-section">
+          <label for="">Escada Laranja</label>
+          <input type="checkbox" checked name="" id="escada-laranja" placeholder="Marca equipamento">
+        </section>
+        <section class="checkbox-section">
+          <label for="">Andaimes</label>
+          <input type="checkbox" name="" id="andaimes" placeholder="Marca equipamento">
+        </section>
+        <section class="checkbox-section">
+          <label for="">Rapel</label>
+          <input type="checkbox" name="" id="rapel" placeholder="Marca equipamento">
+        </section>
+      </div> <!-- Input sub container end -->
+
+      <h3 class="sub-title">Fotos</h3>
+        <div class="inputs-sub-container"> <!-- Input sub container start -->
+          <section id="container-img-1" class="img-upload-container">
+              <label class="input-personalizado">
+                <span  id="selecionar-1" class="botao-selecionar">Selecione uma imagem</span>
+                <div class="preview-img-container">
+                  <img class="imagem" id="img-1"/>
+                </div>
+                <input id="as" data-selecionar="selecionar-1" data-img="img-1" type="file" class="input-file" accept="image/*">
+              </label>
+          </section>
+          <section  id="container-img-2" class="img-upload-container">
+            <label class="input-personalizado">
+              <span id="selecionar-2"  class="botao-selecionar">Selecione uma imagem</span>
+              <div class="preview-img-container">
+                <img class="imagem" id="img-2"/>
+              </div>
+              <input data-selecionar="selecionar-2" data-img="img-2" type="file" class="input-file" accept="image/*">
+            </label>
+        </section>
+        <section  id="container-img-3" class="img-upload-container">
+          <label class="input-personalizado">
+            <span  id="selecionar-3"class="botao-selecionar">Selecione uma imagem</span>
+            <div class="preview-img-container">
+              <div class="preview-img-container">
+              <img class="imagem" id="img-3"/>
+            </div>
+            <input data-selecionar="selecionar-3" data-img="img-3" type="file" class="input-file" accept="image/*">
+          </label>
+      </section>
+        </div>
+  </div>
+  <div class="fn-btn-container">
+    <button id="fn-btn-id" class="fn-btn">Finalizar Chamado</button>
+  </div>
+  <!-- Input sub container end -->
+      </div>
+    </div>
+    <section class="overlay"></section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module" src="../js/checklist.js"></script>
+    <script>
+      const navBar = document.querySelector("nav"),
+        menuBtns = document.querySelectorAll(".menu-icon"),
+        overlay = document.querySelector(".overlay");
+
+      menuBtns.forEach((menuBtn) => {
+        menuBtn.addEventListener("click", () => {
+          navBar.classList.toggle("open");
+        });
+      });
+
+      overlay.addEventListener("click", () => {
+        navBar.classList.remove("open");
+      });
+    </script>
+  </body>
+</html>
+
