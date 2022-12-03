@@ -141,7 +141,6 @@ router.post("/generate-pdf", multer.array("file", 5), async (req, res) => {
 })
 
 app.use(router)
-
 server.listen(process.env.PORT,() => {
     console.log("Servidor rodando na porta: " + process.env.PORT)
 })
